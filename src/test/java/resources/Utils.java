@@ -20,13 +20,13 @@ import io.restassured.specification.RequestSpecification;
 public class Utils {
 	public static RequestSpecification req;
 
-	public RequestSpecification requestSpecification() throws IOException {
+	public static RequestSpecification  requestSpecification() throws IOException {
 
 		// For logging.txt not to append on previous log
 		if (req == null) {
 			PrintStream logs = new PrintStream(new FileOutputStream("logging.txt"));
 			RestAssured.baseURI = getGlobalValue("baseURL");
-			req = new RequestSpecBuilder().addQueryParam("key", "qaclick123")
+			req = new RequestSpecBuilder()
 					.addFilter(RequestLoggingFilter.logRequestTo(logs))
 					.addFilter(ResponseLoggingFilter.logResponseTo(logs)).setContentType(ContentType.JSON).build();
 
@@ -35,7 +35,7 @@ public class Utils {
 		return req;
 	}
 
-	public String getGlobalValue(String key) throws FileNotFoundException, IOException {
+	public static String getGlobalValue(String key) throws FileNotFoundException, IOException {
 		Properties prop = new Properties();
 		prop.load(new FileInputStream(new File("C:\\Users\\namit\\eclipse-workspace\\APITests\\src\\test\\java\\resources\\global.properties")));
 
