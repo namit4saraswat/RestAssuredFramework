@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Properties;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.RequestLoggingFilter;
@@ -19,15 +21,15 @@ import io.restassured.specification.RequestSpecification;
 
 public class Utils {
 	public static RequestSpecification req;
+	protected TestData obj = new TestData();
+	protected ObjectMapper objectMapper = new ObjectMapper();
 
-	public static RequestSpecification  requestSpecification() throws IOException {
-
+	public static RequestSpecification requestSpecification() throws IOException {
 		// For logging.txt not to append on previous log
 		if (req == null) {
 			PrintStream logs = new PrintStream(new FileOutputStream("logging.txt"));
 			RestAssured.baseURI = getGlobalValue("baseURL");
-			req = new RequestSpecBuilder()
-					.addFilter(RequestLoggingFilter.logRequestTo(logs))
+			req = new RequestSpecBuilder().addFilter(RequestLoggingFilter.logRequestTo(logs))
 					.addFilter(ResponseLoggingFilter.logResponseTo(logs)).setContentType(ContentType.JSON).build();
 
 		}
@@ -37,15 +39,16 @@ public class Utils {
 
 	public static String getGlobalValue(String key) throws FileNotFoundException, IOException {
 		Properties prop = new Properties();
-		prop.load(new FileInputStream(new File("C:\\Users\\namit\\eclipse-workspace\\APITests\\src\\test\\java\\resources\\global.properties")));
+		prop.load(new FileInputStream(new File(
+				"C:\\Users\\namit\\eclipse-workspace\\APITests\\src\\test\\java\\resources\\global.properties")));
 
 		return prop.get(key).toString();
 	}
-	
+
 	public void getResourcePath() {
-		
+
 	}
-	
+
 	public String getJSONPathValue(Response response, String key) {
 		JsonPath js = new JsonPath(response.asString());
 		return js.get(key).toString();

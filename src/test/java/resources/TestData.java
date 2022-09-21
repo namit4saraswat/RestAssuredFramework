@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pojo.AddPlace;
+import pojo.CreateUser;
 import pojo.Location;
 
 public class TestData {
@@ -27,6 +28,13 @@ public class TestData {
 		place.setWebsite("https://jsdgxhh.com");
 		
 		return place;
+	}
+	
+	public CreateUser createUserPayload(String name, String job) {
+		CreateUser user = new CreateUser(name, job);
+		user.setName(name);
+		user.setJob(job);
+		return user;
 	}
 	
 }

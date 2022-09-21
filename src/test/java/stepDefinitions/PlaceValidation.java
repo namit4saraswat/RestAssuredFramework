@@ -18,24 +18,22 @@ public class PlaceValidation extends Utils {
 
 	ResponseSpecification resspec;
 	Response response;
-	TestData obj = new TestData();
 
 	@Given("Add place payload with {string} {string} {string}")
 	public void add_place_payload(String name, String language, String address) throws IOException {
-
 		req.given().spec(requestSpecification()).body(obj.addPlacePayload(name, language, address));
-
 	}
 
 	@When("user calls {string} with {string} http request")
 	public void user_calls_with_http_request(String resource, String method) {
 		if (method.equalsIgnoreCase("POST")) {
-			req.when().post(APIResources.valueOf(resource).getResource().toString());
+			RestAssured.given(req).when().post(APIResources.valueOf(resource).getResource().toString());
 		}
 		if (method.equalsIgnoreCase("GET")) {
-			response =	RestAssured.given(req)
-			.when()
-				.get(APIResources.valueOf(resource).getResource().toString());
+			response = RestAssured.given(req).when().get(APIResources.valueOf(resource).getResource().toString());
+		}
+		if(method.equalsIgnoreCase("PUT")) {
+			response = RestAssured.given(req).when().put(APIResources.valueOf(resource).getResource().toString());
 		}
 
 	}

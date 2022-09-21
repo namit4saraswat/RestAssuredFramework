@@ -9,7 +9,8 @@ public enum APIResources {
 	
 	//ReqRes API's
 	listUsers("/api/users"),
-	createuser("/api/users");
+	createuser("/api/users"),
+	updateUser("/api/users/2");
 	
 	private String resource;
 

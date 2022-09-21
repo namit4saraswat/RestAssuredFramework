@@ -11,7 +11,7 @@ Cookies:		<none>
 Multiparts:		<none>
 Body:			<none>
 HTTP/1.1 200 OK
-Date: Sat, 17 Sep 2022 12:21:17 GMT
+Date: Wed, 21 Sep 2022 14:05:12 GMT
 Content-Type: application/json; charset=utf-8
 Transfer-Encoding: chunked
 Connection: keep-alive
@@ -21,12 +21,12 @@ Etag: W/"406-ut0vzoCuidvyMf8arZpMpJ6ZRDw"
 Via: 1.1 vegur
 Cache-Control: max-age=14400
 CF-Cache-Status: HIT
-Age: 4142
-Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=M0I%2FchVfWQs3di7pbB6VDtAt0gxoeOE0eCJp3nK%2FzMc7IQSDh6dCHuZvcOZmkk6s9%2BW9Pg4HdufKoiKmrRPuYzPmqt45w%2Fpd2bptAdHULd97jO0FBSaE2zd9CQ%3D%3D"}],"group":"cf-nel","max_age":604800}
+Age: 4542
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=T%2FB6UXHlD%2Fbur8M9kg%2FVTRo7YrBcamLPDnOXZQ%2BZE2hD3eyWi52Y%2B1h38BzyImlOyu2CQoQq98KZ4T5Z%2FTpaDIm7cdr1SQs5ieVN7SdtlRE4D9TbCRQvRanu3w%3D%3D"}],"group":"cf-nel","max_age":604800}
 NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
 Vary: Accept-Encoding
 Server: cloudflare
-CF-RAY: 74c1ccff88897938-AMD
+CF-RAY: 74e35aba5aea7956-AMD
 Content-Encoding: gzip
 
 {
@@ -82,4 +82,79 @@ Content-Encoding: gzip
         "url": "https://reqres.in/#support-heading",
         "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
     }
+}
+Request method:	POST
+Request URI:	https://reqres.in/api/users?page=2
+Proxy:			<none>
+Request params:	<none>
+Query params:	page=2
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "name": "Namit",
+    "job": "QA"
+}
+HTTP/1.1 201 Created
+Date: Wed, 21 Sep 2022 14:05:15 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 77
+Connection: keep-alive
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Etag: W/"4d-igdbcY6vDMUds7hG0PvA4wHV4B4"
+Via: 1.1 vegur
+CF-Cache-Status: DYNAMIC
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=sWGvgoGV4BPKd3YpP17Rdg9TC45WiRCMfBDbFe3LHa0CzIGWLIdALx5v442%2BRrMnfJusGoHKeu60pECpf%2FW9J%2FMuFWQHkqp6Z%2Fw%2BRFBFjNaGcmtEa3yyHE83zg%3D%3D"}],"group":"cf-nel","max_age":604800}
+NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 74e35ac7cfd4792f-AMD
+
+{
+    "name": "Namit",
+    "job": "QA",
+    "id": "681",
+    "createdAt": "2022-09-21T14:05:15.088Z"
+}
+Request method:	PUT
+Request URI:	https://reqres.in/api/users/2?page=2
+Proxy:			<none>
+Request params:	<none>
+Query params:	page=2
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "name": "Namit",
+    "job": "QA"
+}
+HTTP/1.1 200 OK
+Date: Wed, 21 Sep 2022 14:05:15 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Etag: W/"42-xhjjc8ol2tkQnrazPsfdw81Jnsg"
+Via: 1.1 vegur
+CF-Cache-Status: DYNAMIC
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=0sO8%2FAyyOPJx19rELq2cgiPViQfcycfJoPCNnrkBSANbqB5eAQfNQ4KuQOx4Q0VOKzQ9bS%2FoWluAptRdgdAmPFEekQacK1lrABeXdJFsE%2F9jN2hbprLuXAuY7A%3D%3D"}],"group":"cf-nel","max_age":604800}
+NEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}
+Vary: Accept-Encoding
+Server: cloudflare
+CF-RAY: 74e35acaebb8792f-AMD
+Content-Encoding: gzip
+
+{
+    "name": "Namit",
+    "job": "QA",
+    "updatedAt": "2022-09-21T14:05:15.580Z"
 }

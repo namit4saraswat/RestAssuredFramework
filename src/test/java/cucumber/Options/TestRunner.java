@@ -6,9 +6,8 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = { "src/test/java/features/reqres.feature" }, glue = { "stepDefinitions" }, plugin = { "pretty" }, monochrome = true)
+@CucumberOptions(features = { "src/test/java/features/reqres.feature" }, glue = { "stepDefinitions" }, plugin = {
+		"pretty" },monochrome = true)
 public class TestRunner {
 
-	
-	
 }
