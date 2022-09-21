@@ -6,13 +6,12 @@ Scenario: Verify if List User api is working fine
 	When user calls "listUsers" with "get" http request
 	Then the API returns 200 status code
 	And "page" in reponse is "2"
-	And "last_name" in reponse is "Ferguson"
-
+	
 @Createuser
 Scenario Outline: Verify if create User Post API is working fine
 	Given createUser payload with "<name>" and "<job>"
 	When user calls "createuser" with "Post" http request
-	Then the API returns 200 status code
+	Then the API returns 201 status code
 	And "name" in reponse is "<name>"
 	And "job" in reponse is "<job>"
 Examples:

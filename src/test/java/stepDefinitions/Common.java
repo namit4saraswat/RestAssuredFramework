@@ -11,10 +11,9 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.ResponseSpecification;
 import resources.APIResources;
-import resources.TestData;
 import resources.Utils;
 
-public class PlaceValidation extends Utils {
+public class Common extends Utils {
 
 	ResponseSpecification resspec;
 	Response response;
@@ -27,7 +26,7 @@ public class PlaceValidation extends Utils {
 	@When("user calls {string} with {string} http request")
 	public void user_calls_with_http_request(String resource, String method) {
 		if (method.equalsIgnoreCase("POST")) {
-			RestAssured.given(req).when().post(APIResources.valueOf(resource).getResource().toString());
+			response = RestAssured.given(req).when().post(APIResources.valueOf(resource).getResource().toString());
 		}
 		if (method.equalsIgnoreCase("GET")) {
 			response = RestAssured.given(req).when().get(APIResources.valueOf(resource).getResource().toString());
@@ -39,8 +38,8 @@ public class PlaceValidation extends Utils {
 	}
 
 	@Then("the API returns {int} status code")
-	public void the_api_returns_status_code(Integer statusCode) {
-		assertEquals(response.getStatusCode(), 200);
+	public void the_api_returns_status_code(int statusCode) {
+		assertEquals(response.getStatusCode(), statusCode);
 	}
 
 	@Then("{string} in reponse is {string}")
