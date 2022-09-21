@@ -1,7 +1,7 @@
 Feature: Validate reqres API's
 
 @listUser
-Scenario: Verify if List User api is working fine
+Scenario: Verify if List User get api is working fine
 	Given request with queryParam key "page" and value "2"
 	When user calls "listUsers" with "get" http request
 	Then the API returns 200 status code
